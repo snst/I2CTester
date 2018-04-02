@@ -75,7 +75,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\i2cArduino\i2cAdapter.csproj">
+    <ProjectReference Include="..\i2cAdapter\i2cAdapter.csproj">
       <Project>{6ea88cec-2c49-49e3-9f7a-bd063688cc7f}</Project>
       <Name>i2cAdapter</Name>
     </ProjectReference>
