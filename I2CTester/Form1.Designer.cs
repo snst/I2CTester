@@ -127,7 +127,7 @@
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnWrite);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "i2cTester";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I2CTester", "I2CTester\I2CTester.csproj", "{2AD4DB1F-F824-47E3-B9E9-9B52150F8FF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i2cTester", "i2cTester\i2cTester.csproj", "{2AD4DB1F-F824-47E3-B9E9-9B52150F8FF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i2cAdapter", "i2cAdapter\i2cAdapter.csproj", "{6EA88CEC-2C49-49E3-9F7A-BD063688CC7F}"
 EndProject
