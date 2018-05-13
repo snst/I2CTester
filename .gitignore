@@ -1,0 +1,8 @@
+i2cGpsRangefinder/obj/*
+i2cAdapter/obj/*
+i2cGpsRangefinder/bin/*
+i2cTester/obj/*
+i2cTester/bin/*
+htu21Tester/obj/*
+htu21Tester/bin/*
+.vs/*

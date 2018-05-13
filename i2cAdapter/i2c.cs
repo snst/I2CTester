@@ -33,17 +33,11 @@ namespace i2cAdapter
             set { slaveAddress = value; }
         }
 
-        public bool init(String port, int baud=19200)
+        public void init(String port, int baud=19200)
         {
-            try {
-                serial = new SerialPort(port, baud, Parity.None, 8, StopBits.One);
-                serial.DataReceived += new SerialDataReceivedEventHandler(dataReceived);
-                serial.Open();
-                return true;
-            } catch (Exception e)
-            {
-                return false;
-            }
+            serial = new SerialPort(port, baud, Parity.None, 8, StopBits.One);
+            serial.DataReceived += new SerialDataReceivedEventHandler(dataReceived);
+            serial.Open();
         }
         
         public bool read(Byte[] buffer)
@@ -105,6 +99,16 @@ namespace i2cAdapter
                 }
 //                Console.WriteLine(b.ToString());
             }
+        }
+
+        static public byte[] StringToByteArray(string hex)
+        {
+            return Enumerable.Range(0, hex.Length / 2).Select(x => Convert.ToByte(hex.Substring(x * 2, 2), 16)).ToArray();
+        }
+
+        static public string ByteArrayToString(byte[] ba)
+        {
+            return BitConverter.ToString(ba).Replace("-", "");
         }
     }
 }

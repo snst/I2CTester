@@ -19,25 +19,15 @@ namespace I2CTester
             i2c.init("COM4");
         }
 
-        private byte[] str2byte(string hex)
-        {
-            return Enumerable.Range(0, hex.Length / 2).Select(x => Convert.ToByte(hex.Substring(x * 2, 2), 16)).ToArray();
-        }
-
-        private string ByteArrayToString(byte[] ba)
-        {
-            return BitConverter.ToString(ba).Replace("-", "");
-        }
-
         private byte getAddr()
         {
-            byte[] addr = str2byte(txtAddress.Text);
+            byte[] addr = DeviceI2C.StringToByteArray(txtAddress.Text);
             return addr[0];
         }
 
         private void btnWrite_Click(object sender, EventArgs e)
         {
-            byte[] w = str2byte(txtWrite.Text);
+            byte[] w = DeviceI2C.StringToByteArray(txtWrite.Text);
             i2c.SlaveAddress = getAddr();
             i2c.write(w);
         }
@@ -47,7 +37,7 @@ namespace I2CTester
             byte[] r = new byte[int.Parse(txtReadCount.Text)];
             i2c.SlaveAddress = getAddr();
             i2c.read(r);
-            txtRead.Text = ByteArrayToString(r);
+            txtRead.Text = DeviceI2C.ByteArrayToString(r);
         }
     }
 }
